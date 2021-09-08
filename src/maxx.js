@@ -15,6 +15,12 @@ function CreateComponent(dict) {
 
 function LoadCPN() {
   window.cpn.forEach((c)=>{
-    document.documentElement.innerHTML = document.documentElement.innerHTML.replace(c.recognize, c.assocElement.outerHTML)
+    elems = document.body.getElementsByTagName("*");
+    [].forEach.call(elems, ((e)=>{
+      if (e.innerText == c.recognize) {
+        e.innerHTML = "";
+        e.appendChild(c.assocElement)
+      }
+    }))
   })
 }
