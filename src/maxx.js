@@ -12,4 +12,9 @@ function CreateComponent(dict) {
     window.cpn.push({recognize: `[[${name}]]`, assocElement:e})
   }
 }
-  
+
+function LoadCPN() {
+  window.cpn.forEach((c)=>{
+    document.documentElement.innerHTML = document.documentElement.innerHTML.replace(c.recognize, c.assocElement.outerHTML)
+  })
+}
