@@ -8,7 +8,7 @@ function CreateComponent(dict) {
     let e = document.createElement('p')
     e.innerText = text;
     Object.keys(dict).forEach((k)=>{
-      if (k.startsWith("a--")) {
+      if (k.startsWith("a__")) {
         e.setAttribute(k, dict[k])
       }
       if (k.startsWith("on")) {
