@@ -8,8 +8,11 @@ function CreateComponent(dict) {
     let e = document.createElement('p')
     e.innerText = text;
     Object.keys(dict).forEach((k)=>{
-      if (k.startsWith("on")) {
+      if (k.startsWith("a--")) {
         e.setAttribute(k, dict[k])
+      }
+      if (k.startsWith("on")) {
+        e.addEventListener(k.replace("on",""), dict[k])
       }
     })
     window.cpn.push({recognize: `[[${name}]]`, assocElement:e})
