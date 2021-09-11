@@ -9,7 +9,7 @@ function CreateComponent(dict) {
     e.innerText = text;
     Object.keys(dict).forEach((k)=>{
       if (k.startsWith("a__")) {
-        e.setAttribute(k, dict[k])
+        e.setAttribute(k.replace("a__", dict[k])
       }
       if (k.startsWith("on")) {
         e.addEventListener(k.replace("on",""), dict[k])
